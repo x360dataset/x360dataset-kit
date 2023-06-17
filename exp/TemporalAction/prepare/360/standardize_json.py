@@ -9,16 +9,14 @@ import pandas as pd
 from tqdm import tqdm
 import shutil  
 
-
-# root = '../360x/360data/360x_feat/annotation_source'
 # json_list = glob(os.path.join(root, "*/*/*/*/*"))
 
-root = '/bask/projects/j/jiaoj-3d-vision/yuqi/Annotation/Inside'
+root = '../Annotation/Inside'
 json_list = glob(os.path.join(root, "*/*/*/*"))
 
 
 target_root = '../360x/360data/360x_feat/annotation/360_source'
-# ide/University/04_Bham_GreatHall_20221206_160737/360/*
+
 
 
 class2num, num2class = {}, {}
@@ -60,6 +58,7 @@ from glob import glob
 from tqdm import tqdm
 import cv2
 import json
+
 
 video_paths = glob('../360x/360data/360x_feat/video/360/*')
 

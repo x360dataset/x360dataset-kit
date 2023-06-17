@@ -5,6 +5,7 @@ from glob import glob
 
 root =  '../360x/360data/360x_feat/360_panoramic'
 target = '../360x/360data/360x_feat/audio/360'
+
 os.makedirs(target, exist_ok=True)
 
 video_list =  glob(os.path.join(root, "*"))
