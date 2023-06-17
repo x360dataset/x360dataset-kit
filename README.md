@@ -5,11 +5,12 @@
 
 ## Code Overview
 
-The structure of this code repo is heavily inspired by Detectron2. Some of the main components are
+The structure of main components are
 
-* ./libs/core: Parameter configuration module.
-* ./libs/datasets: Data loader and IO module.
-* ./libs/modeling: Our main model with all its building blocks.
-* ./libs/utils: Utility functions for training, inference, and postprocessing.
+* ./exp/Classification: Video classification experiment folder.
+* ./exp/SSL: Video self-supervised learning experiment folder, including video pace and video clip order.
+* ./exp/TemporalAction: Video temporal action localization experiment folder.
+* ./prepare/prepare_data: Extract audios and frames from videos.
+* ./prepare/prepare_directional_audio: Prepare directional audio time delay data.
+* ./prepare/prepare_feature: Prepare pre-computed features for video, audio and directional audio time delay data.
 
-## 
