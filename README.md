@@ -11,11 +11,9 @@
   
 [The MIx Group](https://mix.jianbojiao.com/), University of Birmingham
 
-<a href="https://mix.jianbojiao.com/"><img height=50 src="statics/mix_group.png"/></a> 
-·
-<a href="https://www.birmingham.ac.uk/"><img height=50 src="statics/2.-Positive-University-of-Birmingham-logo-on-white-background.jpg"/></a>
-·
-<a href="https://www.baskerville.ac.uk/"><img height=50 src="statics/baskerville.svg"></a>
+<a href="https://mix.jianbojiao.com/"><img height=50 src="statics/mix_group.png" style="padding-left: 10px; padding-right: 10px"/></a>
+<a href="https://www.birmingham.ac.uk/"><img height=40 src="statics/UoB_Crest_Logo_RGB_POS_Landscape.png" style="padding-left: 10px; padding-right: 10px"/></a>
+<a href="https://www.baskerville.ac.uk/"><img height=50 src="statics/baskerville.svg" style="padding-left: 10px; padding-right: 10px"></a>
 
 <p align="center">
     <br /> 
