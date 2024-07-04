@@ -1,4 +1,3 @@
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -6,9 +5,8 @@
     <img src="statics/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">360+x : A Panoptic Multi-modal Scene Understanding Dataset</h3>
+<h3 align="center">360+x : A Panoptic Multi-modal Scene Understanding Dataset</h3>
 
-  
 [The MIx Group](https://mix.jianbojiao.com/), University of Birmingham
 
 <a href="https://mix.jianbojiao.com/"><img height=50 src="statics/mix_group.png" style="padding-left: 10px; padding-right: 10px"/></a>
@@ -30,12 +28,14 @@
 Welcome to [**360+x**](x360dataset.github.io) dataset development kit repo.
 
 ### Roadmap
-This Development Toolbox is under construction 🚧.
-- [x] Code Release - 09/06/2024
-- [ ] Checkpoints Release
 
+This Development Toolbox is under construction 🚧.
+
+- [x] Code Release - 09/06/2024
+- [x] TAL Checkpoints Release - 04/07/2024
 
 ### Table of Contents
+
 <ul>
 <li>
   <a href="#dataset-highlights">Dataset Highlights</a>
@@ -43,16 +43,19 @@ This Development Toolbox is under construction 🚧.
 <li>
   <a href="#toolkit-structure">Toolkit Structure</a>
 </li>
+<li>
+<a href="#training">Training</a>
+</li>
+<li>
+  <a href="#pretrained-model">Pretrained Model</a>
+</li>
 <li><a href="#license">License</a></li>
 <li><a href="#cite">Cite</a></li>
 <li><a href="#contact">Contact</a></li>
 <li><a href="#acknowledgments">Acknowledgments</a></li>
 </ul>
 
-
-
 ## Dataset Highlights
-
 
 <b><i>360+x</i> dataset</b> introduces a unique panoptic perspective to scene understanding,
 differentiating itself from existing datasets, by offering multiple viewpoints and modalities,
@@ -78,21 +81,61 @@ captured from a variety of scenes. Our dataset contains:
 
 <img src="statics/overall.gif" />
 
-
 ## Toolkit Structure
 
 - configs : Configuration files for the dataset
 - libs : Libraries for the dataset
-  - dataset : The dataloader for the dataset
-  - database : The database for the dataset
+    - dataset : The dataloader for the dataset
+    - database : The database for the dataset
 - models : Models for the dataset
 
+# Training
+
+For using ActionFormer, you need to
+follow [this compile guide](https://github.com/happyharrycn/actionformer_release/blob/main/INSTALL.md).
+
+For training the model, you can use the following example script:
+
+```bash
+python run/TemporalAction/train.py \
+       ./configs/tridet/360_i3d.yaml \
+       --method tridet \
+       --modality 10011
+```
+
+"run/TemporalAction/configs/tridet/360_i3d.yaml" is the configuration file for training.
+
+Method identifies the model you want to train.
+
+Modality is the input modality for the model. These five digits represent whether the model uses panoramic video,
+front-view video, binocular video, audio, and direction audio respectively. For example, here "10011" means the model
+uses panoramic video, audio, and direction audio.
+
+# Pretrained Models
+
+All pretrained models are available in
+the [Huggingface Model Hub🤗](https://huggingface.co/quchenyuan/360x_dataset_pretrained_models).
+
+| TAL Pretrained Model | mAP@0.50 | mAP@0.75 | mAP@0.95 |                                                 Download Link                                                 |
+|:--------------------:|:--------:|:--------:|:--------:|:-------------------------------------------------------------------------------------------------------------:|
+|     ActionFormer     |   27.4   |   17.0   |   6.53   | [Model](https://huggingface.co/quchenyuan/360x_dataset_pretrained_models/blob/main/TAL/actionformer.pth.tar)  |
+|    TemporalMaxer     |   29.8   |   20.9   |   10.0   | [Model](https://huggingface.co/quchenyuan/360x_dataset_pretrained_models/blob/main/TAL/temporalmaxer.pth.tar) |
+|        TriDet        |  26.98   |   19.4   |   7.21   |    [Model](https://huggingface.co/quchenyuan/360x_dataset_pretrained_models/blob/main/TAL/tridet.pth.tar)     |
+
+For evaluation, you can use the following example script:
+
+```bash
+python run/TemporalAction/eval.py \
+       ./configs/tridet/360_i3d.yaml \
+       {path_to_pretrained_model.pth.tar} \
+       --method tridet \
+       --modality 10011
+```
 
 ## License
 
-Distributed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-
-
+Distributed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 ## Cite
 
@@ -104,15 +147,18 @@ Distributed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0
   year={2024}
 }
 ```
+
 ## Contact
 
 You can contact us by https://mix.jianbojiao.com/contact/.
 
-You can also email us by <a href="mailto:mix.group.uk@gmail.com">mix.group.uk@gmail.com</a> or <a href="mailto:cxq134@student.bham.ac.uk">cxq134@student.bham.ac.uk</a>.
+You can also email us by <a href="mailto:mix.group.uk@gmail.com">mix.group.uk@gmail.com</a>
+or <a href="mailto:cxq134@student.bham.ac.uk">cxq134@student.bham.ac.uk</a>.
 
 
 
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
 This README template is inspired by [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
