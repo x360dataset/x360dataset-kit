@@ -47,7 +47,7 @@ This Development Toolbox is under construction 🚧.
 <a href="#training">Training</a>
 </li>
 <li>
-  <a href="#pretrained-model">Pretrained Model</a>
+  <a href="#pretrained-models">Pretrained Models</a>
 </li>
 <li><a href="#license">License</a></li>
 <li><a href="#cite">Cite</a></li>
