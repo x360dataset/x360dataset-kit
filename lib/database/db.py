@@ -352,9 +352,6 @@ class database(db_utils):
                 try:
                     label = metadata[key]['av']['1']
                 except:
-                    # print("anno file:", anno)
-                    # print("file:", pd.read_json(anno)['metadata'] )
-                    # print("failed key:", key)
                     continue
 
                 segment = metadata[key]['z']
@@ -421,8 +418,6 @@ class database(db_utils):
         for id in self.get_idlist():
             if not istrim:
                 data = self.get_data_from_id(id)
-                # 360/360_panoramic.mp4
-                # Stereo/binocular/clip*/binocular.mp4
 
                 output_dict['panoramic'].append(
                     os.path.join(data['x360_original'], "360_panoramic.mp4")
@@ -440,8 +435,6 @@ class database(db_utils):
             else:
                 data = self.get_data_from_id(id)
                 suffix = "_trim"
-                # 360_trim/360_panoramic_trim/cut0_0s_to_10s/cut0_0s_to_10s.mp4
-                # Stereo_trim/binocular_trim/clip*/cut0_0s_to_10s/cut0_0s_to_10s.mp4
 
                 path = os.path.join(data['x360'], "360_panoramic" + suffix, "*", "*.mp4")
 
@@ -452,8 +445,6 @@ class database(db_utils):
                     list(glob(os.path.join(data['x360'], "front_view" + suffix, "*",
                                            "*.mp4")))
                 )
-
-                # print("BINOCULAR PATH:", os.path.join(data['stereo'], "binocular"+suffix))
 
                 output_dict["binocular"].extend(
                     list(glob(os.path.join(data['stereo'], "binocular" + suffix,
@@ -509,9 +500,7 @@ class database(db_utils):
 
     def get_at_time_span(self):
         # video_list = self.get_videos_list(istrim=True)
-
         i1, i2, i3 = self.get_train_val_test_id()
-
         id_list = i1 + i2 + i3
 
         out_at_list = []

@@ -84,17 +84,20 @@ class x360Dataset(Dataset):
         # load database and select the subset
 
         self.filter = filter
-        self.feat_file = {"panoramic": panoramic_feat_file, "front_view": front_view_feat_file,
+        self.feat_file = {"panoramic": panoramic_feat_file, 
+                          "front_view": front_view_feat_file,
                           "binocular": binocular_feat_file}
 
         self.db_attributes = {
-            'dataset_name': 'ActivityNet 1.3',
+            'dataset_name': '360x Version 1.0',
             'tiou_thresholds': np.linspace(0.5, 0.95, 10),
             'empty_label_ids': []
         }
 
     def get_attributes(self):
         return self.db_attributes
+    
+    # def 
 
     def add_process_M(self):
         self.Ms = self.args['Ms']
