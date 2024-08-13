@@ -33,12 +33,17 @@ This Development Toolbox is under construction 🚧.
 
 - [x] Code Release - 09/06/2024
 - [x] TAL Checkpoints Release - 04/07/2024
+- [x] TAL Annotations Release - 13/08/2024
+- [x] Extracted Features Extracted by 360x Pretrained Extractor Release - 13/08/2024
 
 ### Table of Contents
 
 <ul>
 <li>
   <a href="#dataset-highlights">Dataset Highlights</a>
+</li>
+<li>
+  <a href="#dataset-access">Dataset Access</a>
 </li>
 <li>
   <a href="#toolkit-structure">Toolkit Structure</a>
@@ -48,6 +53,9 @@ This Development Toolbox is under construction 🚧.
 </li>
 <li>
   <a href="#pretrained-models">Pretrained Models</a>
+</li>
+<li>
+  <a href="#features">Features</a>
 </li>
 <li><a href="#license">License</a></li>
 <li><a href="#cite">Cite</a></li>
@@ -80,6 +88,16 @@ captured from a variety of scenes. Our dataset contains:
 </ul>
 
 <img src="statics/overall.gif" />
+
+## Dataset Access
+
+The dataset is fully released in HuggingFace 🤗.
+
+|                                      Low Resolution Version                                      |                                     High Resolution Version                                      |
+|:------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------:|
+| [Dataset quchenyuan/360x_dataset_LR](https://huggingface.co/datasets/quchenyuan/360x_dataset_LR) | [Dataset quchenyuan/360x_dataset_HR](https://huggingface.co/datasets/quchenyuan/360x_dataset_HR) |
+
+The HuggingFace Repo also contains annotations.
 
 ## Toolkit Structure
 
@@ -131,6 +149,11 @@ python run/TemporalAction/eval.py \
        --method tridet \
        --modality 10011
 ```
+
+
+# Pretrained Models
+
+Extracted features extracted by 360x pretrained extractor for each modality are also released in [Huggingface Dataset Hub🤗](https://huggingface.co/datasets/quchenyuan/360x_dataset_features)
 
 ## License
 
