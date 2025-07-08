@@ -3,7 +3,7 @@ import hashlib
 import pickle
 
 # Path to your main directory (adjust accordingly)
-base_path = '/bask/projects/j/jiaoj-rep-learn/360XProject/ICCV_Workshop_Data/Han/unanonymized_published_data'  # Change this to your actual path
+base_path = '/Volumes/Elements/2024_ready'  # Change this to your actual path
 
 # Dictionary to store hash -> original name mapping
 hash_mapping = {}

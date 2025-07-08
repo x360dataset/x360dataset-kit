@@ -2,8 +2,8 @@ import os
 import shutil
 from tqdm import tqdm
 
-base_path = '/bask/projects/j/jiaoj-rep-learn/360XProject/ICCV_Workshop_Data/Han/unanonymized_published_data'
-output_base = '/bask/projects/j/jiaoj-rep-learn/360XProject/ICCV_Workshop_Data/Han/Ready_data'
+base_path = '/Volumes/Elements/2024_ready'
+output_base = '/Volumes/Elements/2024_ready_upload'
 
 # Create target folders if they don't exist
 for subfolder in ['binocular', 'monocular', 'panoramic', 'third_person']:
@@ -17,7 +17,7 @@ for folder in tqdm(os.listdir(base_path)):
         continue  # Skip files
 
     ### --- Handle 360 folder ---
-    panoramic_path = os.path.join(folder_path, "360", "360_panoramic.mp4")
+    panoramic_path = os.path.join(folder_path,    "360", "360_panoramic.mp4")
     third_person_path = os.path.join(folder_path, "360", "front_view.mp4")
 
     if os.path.exists(panoramic_path):
